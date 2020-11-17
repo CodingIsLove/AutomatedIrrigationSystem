@@ -2,8 +2,12 @@ import express from 'express'
 import dotenv from 'dotenv'
 import {mockRouter} from './routes/mockRouter'
 import {Request, Response} from 'express'
+import './config/database'
+import {setupDb}from './config/setupDb'
 
+// Setup
 dotenv.config()
+setupDb()
 const app = express()
 const port = process.env.PORT
 

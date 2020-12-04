@@ -1,4 +1,4 @@
-let rpio = require('rpi-gpio')
+let rpio = require('rpio')
 
 
 rpio.open(26, rpio.OUTPUT,rpio.LOW)

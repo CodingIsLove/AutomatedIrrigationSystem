@@ -18,6 +18,7 @@
 apt update
 apt upgrade
 apt install snapd
+apt install vim
 apt install npm
 apt install 
 ```

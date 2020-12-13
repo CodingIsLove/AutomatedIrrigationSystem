@@ -6,20 +6,20 @@
 </template>
 
 <script>
-import AddPlant from '../components/AddPlant';
-import PlantList from '../components/PlantList';
+import AddPlant from "../components/AddPlant";
+import PlantList from "../components/PlantList";
 
 export default {
   name: "testView",
-  components:{
+  components: {
     AddPlant,
     PlantList
   }
-}
+};
 </script>
 
 <style scoped>
-.testView{
+.testView {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,14 +27,13 @@ export default {
   height: 100vh;
 }
 
-#addPlant{
+#addPlant {
   background-color: pink;
   flex: 1;
 }
 
-#plantList{
+#plantList {
   background-color: blue;
   flex: 1;
 }
-
 </style>

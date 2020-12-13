@@ -6,10 +6,8 @@
 
 <script>
 export default {
-  name: "plantList",
-}
+  name: "plantList"
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

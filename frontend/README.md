@@ -1,4 +1,4 @@
-# gmuesbox
+# frontend
 
 ## Project setup
 ```

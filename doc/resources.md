@@ -1,5 +1,8 @@
 # Links and Resources 
 
+
+### Sensors
+
 ### Typescript
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [TypeScript Online Exercises](https://typescript-exercises.github.io/#exercise=1&file=%2Fnode_modules%2Ftype-assertions%2Findex.ts)

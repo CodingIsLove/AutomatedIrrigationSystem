@@ -2,8 +2,13 @@ import express from 'express'
 import dotenv from 'dotenv'
 import {mockRouter} from './routes/mockRouter'
 import {Request, Response} from 'express'
+import './config/database'
+import {setupDb}from './config/setupDb'
+import {sensorRouter} from "./routes/sensorRouter";
 
+// Setup
 dotenv.config()
+setupDb()
 const app = express()
 const port = process.env.PORT
 
@@ -15,7 +20,10 @@ app.get('/', (req:Request, res:Response) => {
 	res.send('Main Request is working')
 });
 
+// --- Configured routes
 app.use('/mock',mockRouter)
+app.use('/sensors',sensorRouter)
+
 
 app.listen(port, () => {
 	console.log(`Example app listening at http://localhost:${port}`)

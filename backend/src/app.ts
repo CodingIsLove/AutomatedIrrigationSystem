@@ -1,11 +1,9 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import {Request, Response} from 'express'
-import {sensorRouter} from "./routes/sensorRouter";
 
 // Setup
 dotenv.config()
-setupDb()
 const app = express()
 const port = process.env.PORT
 
@@ -18,7 +16,7 @@ app.get('/', (req:Request, res:Response) => {
 });
 
 // --- Configured routes
-app.use('/mock',mockRouter)
+app.use('/cosmosDb',cosmosDbRouter)
 app.use('/sensors',sensorRouter)
 
 

@@ -1,8 +1,5 @@
 # Links and Resources 
 
-
-### Sensors
-
 ### Typescript
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [TypeScript Online Exercises](https://typescript-exercises.github.io/#exercise=1&file=%2Fnode_modules%2Ftype-assertions%2Findex.ts)
@@ -18,3 +15,7 @@
 ### Docker
 - [Dockerize a Node.js app](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
 - [Dockeriza a Node.js and a MongoDB application](https://medium.com/@yash.kukreja.98/dockerizing-a-nodejs-and-mongodb-app-a-tale-of-dockers-and-containers-35747cb7e26e)
+
+### REST API's 
+- [Express Framework - Documentation](http://expressjs.com/)
+- [HTTP Status Codes](https://restfulapi.net/http-status-codes/)

@@ -4,8 +4,9 @@ import {Request, Response} from 'express'
 import cosmosDbRouter from "./router/cosmosDbRouter";
 
 // Setup
-dotenv.config()
+dotenv.config({path:`.env.${process.env.NODE_ENV}`})
 const app = express()
+
 const port = process.env.PORT
 
 // --- configure app

@@ -4,6 +4,7 @@
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [TypeScript Online Exercises](https://typescript-exercises.github.io/#exercise=1&file=%2Fnode_modules%2Ftype-assertions%2Findex.ts)
 - [Design Patterns with TypeScript](https://refactoring.guru/design-patterns/typescript)
+- [Using Nodemon with ts-node](https://stackoverflow.com/questions/37979489/how-to-watch-and-reload-ts-node-when-typescript-files-change)
 
 ### TDD
 - [Testing Node.js with Mocha](https://www.youtube.com/watch?v=Bs68k6xfR3E&t=374s&ab_channel=freeCodeCamp.org)
@@ -19,3 +20,6 @@
 ### REST API's 
 - [Express Framework - Documentation](http://expressjs.com/)
 - [HTTP Status Codes](https://restfulapi.net/http-status-codes/)
+
+### CosmosDB
+- [Samples: Github Repository CosmosDB](https://github.com/Azure/azure-cosmos-js)

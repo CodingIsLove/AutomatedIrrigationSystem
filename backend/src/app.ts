@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import {Request, Response} from 'express'
+import cosmosDbRouter from "./router/cosmosDbRouter";
 
 // Setup
 dotenv.config()
@@ -17,7 +18,6 @@ app.get('/', (req:Request, res:Response) => {
 
 // --- Configured routes
 app.use('/cosmosDb',cosmosDbRouter)
-app.use('/sensors',sensorRouter)
 
 
 app.listen(port, () => {

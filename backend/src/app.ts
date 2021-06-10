@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import {Request, Response} from 'express'
 import cosmosDbRouter from "./router/cosmosDbRouter";
+import morgan from 'morgan'
 
 // Setting the correct node environment mode
 process.env.NODE_ENV = 'testing'
@@ -16,6 +17,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const app = express()
+app.use(express.json()) //for parsing application/json
+app.use(morgan('dev'))
+
 const port = process.env.PORT
 app.set('port', process.env.PORT || 3000);
 

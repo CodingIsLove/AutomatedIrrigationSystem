@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start:dev": "npm run dist-clean && npm run build:dev && nodemon dist/app.js",
+    "start:dev": "npm run clean && npm run build:dev && nodemon dist/app.js",
+    "serve": "nodemon --config nodemon.json src/app.ts",
     "build": "tsc",
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
     "test": "mocha --ui tdd -r ts-node/register src/tests/**/*.ts",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.0.4",
+    "@types/morgan": "^1.9.2",
     "@types/rimraf": "^3.0.0",
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.6",
@@ -31,6 +33,7 @@
     "chai": "^4.2.0",
     "express": "^4.17.1",
     "mocha": "^8.2.1",
+    "morgan": "^1.10.0",
     "restler": "^2.0.1",
     "rimraf": "^3.0.2"
   }

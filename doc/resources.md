@@ -20,6 +20,7 @@
 ### REST API's 
 - [Express Framework - Documentation](http://expressjs.com/)
 - [HTTP Status Codes](https://restfulapi.net/http-status-codes/)
+- [Logging with Morgan](https://github.com/expressjs/morgan)
 
 ### CosmosDB
 - [Samples: Github Repository CosmosDB](https://github.com/Azure/azure-cosmos-js)

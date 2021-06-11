@@ -4,34 +4,34 @@ const cosmosDbRouter = express.Router()
 import {config} from '../config/cosmosConfig'
 const {endpoint, key, databaseId, containerId} = config
 import {CosmosClient} from '@azure/cosmos'
-const client = new CosmosClient({endpoint,key})
+import {Seed} from "../interfaces/Seed";
+const client = new CosmosClient({endpoint, key})
 const database = client.database(databaseId)
 const container = database.container(containerId)
-
 
 
 /**
  * Get Requests
  */
-cosmosDbRouter.get('/db', async (req:Request, res:Response)=>{
+cosmosDbRouter.get('/db', async (req: Request, res: Response) => {
     try {
         const {resources: dbDefList} = await client.databases.readAll().fetchAll()
         res.status(200).json(dbDefList)
-    }catch(err){
-       res.status(500).send(`Error when Reading databases: ${err}`)
-    }
-})
-
-cosmosDbRouter.get('/container', async (req:Request, res:Response)=>{
-    try {
-        const {resources: dbDefList} = await client.databases.readAll().fetchAll()
-        res.status(200).json(dbDefList)
-    }catch(err){
+    } catch (err) {
         res.status(500).send(`Error when Reading databases: ${err}`)
     }
 })
 
-cosmosDbRouter.get('/envSamples',function(req:Request,res:Response){
+cosmosDbRouter.get('/container', async (req: Request, res: Response) => {
+    try {
+        const {resources: dbDefList} = await client.databases.readAll().fetchAll()
+        res.status(200).json(dbDefList)
+    } catch (err) {
+        res.status(500).send(`Error when Reading databases: ${err}`)
+    }
+})
+
+cosmosDbRouter.get('/envSamples', function (req: Request, res: Response) {
     res.status(501).send("Function is not implemented yet")
 })
 

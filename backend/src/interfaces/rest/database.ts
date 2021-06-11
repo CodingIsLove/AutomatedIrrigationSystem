@@ -1,0 +1,3 @@
+interface dbType {
+    name: String
+}

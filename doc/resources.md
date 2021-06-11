@@ -21,6 +21,7 @@
 - [Express Framework - Documentation](http://expressjs.com/)
 - [HTTP Status Codes](https://restfulapi.net/http-status-codes/)
 - [Logging with Morgan](https://github.com/expressjs/morgan)
+- [supertest - Rest API Testing](https://www.npmjs.com/package/supertest)
 
 ### CosmosDB
 - [Samples: Github Repository CosmosDB](https://github.com/Azure/azure-cosmos-js)

@@ -8,7 +8,7 @@
     "serve": "nodemon --config nodemon.json src/app.ts",
     "build": "tsc",
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
-    "test": "mocha --ui tdd -r ts-node/register src/tests/**/*.ts",
+    "test": "mocha --ui bdd -r ts-node/register src/tests/**/*.ts",
     "clean": "ts-node src/misc/wipeDist.ts"
   },
   "keywords": [],

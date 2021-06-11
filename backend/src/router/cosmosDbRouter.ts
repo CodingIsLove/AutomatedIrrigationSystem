@@ -38,32 +38,68 @@ cosmosDbRouter.get('/envSamples',function(req:Request,res:Response){
 /**
  * Post Requests
  */
-cosmosDbRouter.post('/createDb',async (req:Request,res:Response)=>{
-    try{
-        const {database} = await client.databases.createIfNotExists({
-            id: databaseId
-        })
-        res.status(200).send(`Succesfully created the database ${database}`)
-    }catch (err){
+cosmosDbRouter.post('/createDb', async (req: Request, res: Response) => {
+    try {
+        if (req.body.dbName) {
+            const {database} = await client.databases.createIfNotExists({
+                id: req.body.dbName
+            })
+            res.status(200).send(`Succesfully created the database ${database}`)
+        } else {
+            res.status(400).send(`dbName attribute is missing`)
+        }
+    } catch (err) {
         res.status(500).send(`Something went wrong! ${err}`)
-    }})
-
-cosmosDbRouter.post('/envSample',function(req:Request,res:Response){
-    res.status(501).send("Function is not implemented yet")
+    }
 })
+
+cosmosDbRouter.post('/createContainer', async (req: Request, res: Response) => {
+    try {
+        if (req.body.dbName && req.body.containerName) {
+            const {container} = await client
+                .database(req.body.dbName)
+                .containers.createIfNotExists(
+                    {id: req.body.containerName},
+                    {offerThroughput: 400}
+                )
+            res.status(200).send('Everything worked as expected')
+        } else {
+            res.status(400).send('did your request contain the attributes: dbName and containerName?')
+        }
+    } catch (err) {
+        res.status(500).send(`Something went wrong! ${err}`)
+    }
+})
+
+cosmosDbRouter.post('/newSeed', async (req: Request, res: Response) => {
+    try {
+        if (req.body.dbName) {
+            let newSeed: Seed = {name: "ChrisiSeed", latinName: "SeedusChristopherus"}
+
+            const {resource: createdItem} = await client
+                .database(req.body.dbName)
+                .container('Seed')
+                .items
+                .create(newSeed)
+            res.status(200).send(`New Seed ${newSeed.name} was added to your Database`)
+        } else {
+            res.status(400).send('did your request contain the attributes: dbName and containerName?')
+        }
+    } catch (err) {
+        res.status(500).send(`Something went wrong! ${err}`)
+    }
+})
+
 
 /**
  *  Delete Requests
  */
-cosmosDbRouter.delete('/envSample',function(req:Request,res:Response){
+cosmosDbRouter.delete('/envSample', function (req: Request, res: Response) {
     res.status(501).send("Function is not implemented yet")
 })
 
-cosmosDbRouter.delete('/deleteDb',function(req:Request,res:Response){
+cosmosDbRouter.delete('/deleteDb', function (req: Request, res: Response) {
     res.status(501).send("Function is not implemented yet")
 })
 
 export default cosmosDbRouter
-
-
-

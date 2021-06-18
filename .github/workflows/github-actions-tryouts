@@ -1,0 +1,15 @@
+name: Github Actions issue triggered
+on:
+  issues:
+    types: [ opened, edited, deleted ]
+jobs:
+  First-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Issue was successfully created or edited"
+  Second-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Issue was sucessfully created or edited"
+
+

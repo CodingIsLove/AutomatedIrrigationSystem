@@ -9,7 +9,8 @@
     "build": "tsc",
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
     "test": "mocha --ui bdd -r ts-node/register src/tests/**/*.ts",
-    "clean": "ts-node src/misc/wipeDist.ts"
+    "clean": "ts-node src/misc/wipeDist.ts",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [],
   "author": "",

@@ -1,3 +1,3 @@
 interface dbType {
-    name: String
+  name: String
 }

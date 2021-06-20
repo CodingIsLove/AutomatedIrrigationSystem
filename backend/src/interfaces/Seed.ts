@@ -1,4 +1,4 @@
-export interface Seed{
-    name: String,
-    latinName:String
+export interface Seed {
+  name: String
+  latinName: String
 }

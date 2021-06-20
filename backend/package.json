@@ -9,7 +9,11 @@
     "build": "tsc",
     "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
     "test": "mocha --ui bdd -r ts-node/register src/tests/**/*.ts",
-    "clean": "ts-node src/misc/wipeDist.ts"
+    "clean": "ts-node src/misc/wipeDist.ts",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "prettier-watch": "onchange 'src/**/*.ts' -- prettier --write {{changed}}"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +24,11 @@
     "@types/morgan": "^1.9.2",
     "@types/rimraf": "^3.0.0",
     "concurrently": "^5.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "nodemon": "^2.0.6",
+    "prettier": "^2.3.1",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   },

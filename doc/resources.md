@@ -25,3 +25,9 @@
 
 ### CosmosDB
 - [Samples: Github Repository CosmosDB](https://github.com/Azure/azure-cosmos-js)
+
+### Linting
+- [eslint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
+- [Blogpost: How to use ESLint with TypeScript](https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/)
+- [Blogpost: How to use Prettier with ESLint and TypeScript in VSCode](https://khalilstemmler.com/blogs/tooling/prettier/)

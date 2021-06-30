@@ -1,0 +1,33 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: "Upgrade the OS (apt-get dist-upgrade)"
+      apt:
+        upgrade: dist
+
+    - name: "Update OS"
+      apt:
+        update_cache: yes
+
+    - name: "Install all required packages"
+      apt:
+        pkg:
+        - vim
+        - tmux
+        - nodejs
+        - npm
+    
+    - name: "Add nodejs apt key"
+      apt_key:
+        url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+        state: present
+
+    - name: "Install docker"
+      npm:
+        name: docker
+        global: yes
+        state: present
+
+

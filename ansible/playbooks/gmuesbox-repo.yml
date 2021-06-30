@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: "Check if the gmuexbox directory already exists"
+      file: 
+        path: /opt/gmuesbox
+        state: directory
+        mode: '0755'
+
+    - name: "Check if ssh directory already exists"
+      file:
+        path: /home/pi/.ssh
+        state: directory
+
+    - name: "Add the private key to the servers"
+      copy:
+        src: ~/.ssh/id_ed25519
+        dest: /home/pi/.ssh 
+
+    - name: "Clone the GitHub Repository"
+      git:
+        repo: git@github.com:CodingIsLove/AutomatedIrrigationSystem.git
+        dest: /opt/gmuesbox
+        version: dev

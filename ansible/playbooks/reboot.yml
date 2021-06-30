@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: yes
+
+  tasks: 
+    - name: "Reboot all Pi's"
+      reboot:

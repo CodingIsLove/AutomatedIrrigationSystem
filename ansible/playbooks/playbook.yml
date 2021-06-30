@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: "Install all required packages"
+      apt:
+        pkg:
+        - vim
+        - tmux
+        - git
+    
+   

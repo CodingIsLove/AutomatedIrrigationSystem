@@ -40,7 +40,7 @@
     "@types/restler": "^3.1.5",
     "chai": "^4.2.0",
     "express": "^4.17.1",
-    "mocha": "^8.2.1",
+    "mocha": "^10.1.0",
     "morgan": "^1.10.0",
     "restler": "^2.0.1",
     "rimraf": "^3.0.2"
